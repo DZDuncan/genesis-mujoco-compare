@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Genesis vs MuJoCo — Generator Video Comparison</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:#0c0c14;color:#ccc;padding:24px}
+h1{text-align:center;font-size:28px;color:#fff;margin-bottom:6px}
+.subtitle{text-align:center;color:#777;margin-bottom:36px;font-size:14px}
+.gen-section{border:1px solid #2a2a40;border-radius:12px;overflow:hidden;background:#14141f;margin-bottom:44px}
+.gen-header{background:#1a1a2e;padding:16px 24px;border-bottom:1px solid #2a2a40;display:flex;justify-content:space-between;align-items:center}
+.gen-header h2{font-size:20px;color:#fff}
+.gen-header .badge{font-size:12px;background:#333;color:#99a;padding:4px 14px;border-radius:14px}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2a2a40}
+.video-panel{background:#14141f;padding:12px}
+.video-label{text-align:center;padding:10px 0 6px;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.video-label.genesis{color:#4ddf80}
+.video-label.mujoco{color:#b38fff}
+.video-panel .engine-bg{text-align:center;padding:3px 0 8px;font-size:11px;color:#666}
+.video-panel video{width:100%;display:block;border-radius:6px;outline:none}
+.stats-row{display:flex;gap:14px;flex-wrap:wrap;padding:10px 20px;background:#12121e;font-size:11px;color:#888;border-top:1px solid #2a2a40}
+.stat-item{display:flex;gap:4px}.stat-k{color:#666}.stat-v{color:#bbb}
+@media(max-width:860px){.video-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>Genesis vs MuJoCo — Video Comparison</h1>
+<p class="subtitle">9 generators &times; 2 engines = 18 videos</p>
+
+<div class="gen-section">
+<div class="gen-header"><h2>Cannon Recoil</h2><span class="badge">cannon_recoil-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">cannon_mass:</span><span class="stat-v">0.595</span></span>
+<span class="stat-item"><span class="stat-k">projectile_mass:</span><span class="stat-v">0.179</span></span>
+<span class="stat-item"><span class="stat-k">projectile_speed:</span><span class="stat-v">5.8541</span></span>
+<span class="stat-item"><span class="stat-k">cannon_body_hx:</span><span class="stat-v">0.2147</span></span>
+<span class="stat-item"><span class="stat-k">cannon_body_hz:</span><span class="stat-v">0.06</span></span>
+<span class="stat-item"><span class="stat-k">barrel_radius:</span><span class="stat-v">0.0513</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/cannon_recoil_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/cannon_recoil_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Cantilever Load Curve</h2><span class="badge">cantilever_load_curve-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">num_segments:</span><span class="stat-v">11</span></span>
+<span class="stat-item"><span class="stat-k">beam_length:</span><span class="stat-v">0.6709</span></span>
+<span class="stat-item"><span class="stat-k">cross_section:</span><span class="stat-v">0.0084</span></span>
+<span class="stat-item"><span class="stat-k">seg_mass:</span><span class="stat-v">0.013</span></span>
+<span class="stat-item"><span class="stat-k">tip_mass:</span><span class="stat-v">0.3706</span></span>
+<span class="stat-item"><span class="stat-k">hinge_stiffness:</span><span class="stat-v">24.1824</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/cantilever_load_curve_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/cantilever_load_curve_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Catenary With Central Load</h2><span class="badge">catenary_with_central_load-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">num_links:</span><span class="stat-v">16</span></span>
+<span class="stat-item"><span class="stat-k">span:</span><span class="stat-v">0.5732</span></span>
+<span class="stat-item"><span class="stat-k">slack_ratio:</span><span class="stat-v">2.1153</span></span>
+<span class="stat-item"><span class="stat-k">link_length:</span><span class="stat-v">0.0758</span></span>
+<span class="stat-item"><span class="stat-k">link_mass:</span><span class="stat-v">0.02</span></span>
+<span class="stat-item"><span class="stat-k">central_mass:</span><span class="stat-v">0.3661</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/catenary_with_central_load_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/catenary_with_central_load_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Centrifugal Governor</h2><span class="badge">centrifugal_governor-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">spin_speed:</span><span class="stat-v">9.4774</span></span>
+<span class="stat-item"><span class="stat-k">arm_length:</span><span class="stat-v">0.2909</span></span>
+<span class="stat-item"><span class="stat-k">ball_mass:</span><span class="stat-v">0.2157</span></span>
+<span class="stat-item"><span class="stat-k">ball_radius:</span><span class="stat-v">0.0574</span></span>
+<span class="stat-item"><span class="stat-k">arm_damping:</span><span class="stat-v">0.0104</span></span>
+<span class="stat-item"><span class="stat-k">spin_damping:</span><span class="stat-v">0.0017</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/centrifugal_governor_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/centrifugal_governor_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Chain In Freefall No Tension</h2><span class="badge">chain_in_freefall_no_tension-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">num_links:</span><span class="stat-v">26</span></span>
+<span class="stat-item"><span class="stat-k">link_length:</span><span class="stat-v">0.1007</span></span>
+<span class="stat-item"><span class="stat-k">link_radius:</span><span class="stat-v">0.0139</span></span>
+<span class="stat-item"><span class="stat-k">link_mass:</span><span class="stat-v">0.0337</span></span>
+<span class="stat-item"><span class="stat-k">drop_height:</span><span class="stat-v">3.4746</span></span>
+<span class="stat-item"><span class="stat-k">camera_azimuth:</span><span class="stat-v">205.693</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/chain_in_freefall_no_tension_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/chain_in_freefall_no_tension_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Chain Pulled Through Pipe</h2><span class="badge">chain_pulled_through_pipe-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">num_links:</span><span class="stat-v">18</span></span>
+<span class="stat-item"><span class="stat-k">link_length:</span><span class="stat-v">0.0347</span></span>
+<span class="stat-item"><span class="stat-k">link_radius:</span><span class="stat-v">0.0119</span></span>
+<span class="stat-item"><span class="stat-k">link_mass:</span><span class="stat-v">0.0219</span></span>
+<span class="stat-item"><span class="stat-k">pipe_v_height:</span><span class="stat-v">0.593</span></span>
+<span class="stat-item"><span class="stat-k">pipe_h_length:</span><span class="stat-v">0.2236</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/chain_pulled_through_pipe_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/chain_pulled_through_pipe_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Chain Vs Rod Pendulum</h2><span class="badge">chain_vs_rod_pendulum-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">total_length:</span><span class="stat-v">0.464</span></span>
+<span class="stat-item"><span class="stat-k">total_mass:</span><span class="stat-v">0.2444</span></span>
+<span class="stat-item"><span class="stat-k">num_chain_links:</span><span class="stat-v">6</span></span>
+<span class="stat-item"><span class="stat-k">initial_angle:</span><span class="stat-v">0.444</span></span>
+<span class="stat-item"><span class="stat-k">chain_damping:</span><span class="stat-v">0.0025</span></span>
+<span class="stat-item"><span class="stat-k">rod_damping:</span><span class="stat-v">0.0019</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/chain_vs_rod_pendulum_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/chain_vs_rod_pendulum_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Coefficient Of Restitution</h2><span class="badge">coefficient_of_restitution-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">drop_height:</span><span class="stat-v">0.9842</span></span>
+<span class="stat-item"><span class="stat-k">ball_radius:</span><span class="stat-v">0.0739</span></span>
+<span class="stat-item"><span class="stat-k">ball_mass:</span><span class="stat-v">0.1925</span></span>
+<span class="stat-item"><span class="stat-k">solref_stiffness:</span><span class="stat-v">-95696.4633</span></span>
+<span class="stat-item"><span class="stat-k">solref_damping:</span><span class="stat-v">-6.7908</span></span>
+<span class="stat-item"><span class="stat-k">solimp_0:</span><span class="stat-v">0.9071</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/coefficient_of_restitution_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/coefficient_of_restitution_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+<div class="gen-section">
+<div class="gen-header"><h2>Coin Spiral</h2><span class="badge">coin_spiral-generator</span></div>
+<div class="stats-row">
+<span class="stat-item"><span class="stat-k">coin_radius:</span><span class="stat-v">0.0349</span></span>
+<span class="stat-item"><span class="stat-k">coin_half_thick:</span><span class="stat-v">0.0037</span></span>
+<span class="stat-item"><span class="stat-k">coin_mass:</span><span class="stat-v">0.0179</span></span>
+<span class="stat-item"><span class="stat-k">initial_tilt:</span><span class="stat-v">0.0815</span></span>
+<span class="stat-item"><span class="stat-k">initial_spin:</span><span class="stat-v">37.8884</span></span>
+<span class="stat-item"><span class="stat-k">floor_friction:</span><span class="stat-v">0.6602</span></span>
+</div>
+<div class="video-grid">
+<div class="video-panel">
+<div class="video-label genesis">GENESIS</div>
+<div class="engine-bg">genesis ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/coin_spiral_genesis.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+<div class="video-panel">
+<div class="video-label mujoco">MUJOCO</div>
+<div class="engine-bg">mujoco ground truth video</div>
+  <video controls muted preload="none">
+    <source src="videos/coin_spiral_mujoco.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+</div>
+</div>
+</body>
+</html>
